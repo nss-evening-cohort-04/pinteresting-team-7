@@ -1,0 +1,28 @@
+{
+  "name": "pin this",
+  "description": "Pinterest type app",
+  "main": "index.js",
+  "authors": [
+    "Ellen Bailey <ellen@lndesigns.com>",
+    "Jennifer Dutton <jduttondesign@gmail.com>",
+    "Helana Nosrat <helanan@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/nss-evening-cohort-04/pinteresting-team-7",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.9"
+  },
+  "resolutions": {
+    "angular": "^1.5.8"
+  }
+}
