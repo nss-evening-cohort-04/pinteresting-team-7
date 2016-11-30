@@ -1,0 +1,10 @@
+body {
+	background-image: url("img/cork.jpg");
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 2em;
+}
+
+h1 {
+	font-family: 'Anton', sans-serif;
+	font-size: 1.5em;	
+}
