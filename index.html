@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Pin This!</title>
-	<link href="https://fonts.googleapis.com/css?family=Anton|Yanone+Kaffeesatz" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
-<h1>Pin This!</h1>
-Let's get this party started...
-
-</body>
-
-
-
-</html>
+	<head>
+		<meta charset="utf-8">
+		<title>Pin This!</title>
+		<link href="https://fonts.googleapis.com/css?family=Anton|Yanone+Kaffeesatz" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	</head>
+	<body>
+		<body ng-app="PinThisApp">
+			<div ng-include='./partials/navbar.html'></div>
+			<div class="row">
+				<h1>Pin This!</h1>
+				<div class="col-xs-offset-2 col-xs-8" ng-view></div>
+			</div>
+		</body>
+		<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+		<script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
+		<script src="/lib/bower_components/angular-route/angular-route.min.js"></script>
+		<script src="/javascripts/app.js"></script>
+		<script src="/javascripts/AppConstants.js"></script>
+		<script src="/javascripts/AppConfig.js"></script>
+		<script src="/javascripts/factories/AuthFactory.js"></script>
+		<script src="/javascripts/factories/PinFactory.js"></script>
+		 <script src="/javascripts/factories/UserFactory.js"></script>
+		 <script src="/javascripts/controllers/AuthCtrl.js"></script>
+		 <script src="/javascripts/controllers/NavCtrl.js"></script>
+		 <script src="/javascripts/controllers/BoardViewCtrl.js"></script>
+	</html>
