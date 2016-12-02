@@ -1,14 +1,14 @@
 "use strict";
 
 app.controller("CreateBoardCtrl", function($scope, $rootScope, $location, BoardFactory){
-	$scope.newBoard = {};
+	$scope.newPin = {};
 
 	$scope.addNewBoard = function(){
-		$scope.newBoard.isClicked = true;
+		$scope.newPin.isSelected = false;
 		$scope.newBoard.uid = $rootScope.user.uid;
-		BoardFactory.postNewBoard($scope.newBoard).then(function(BoardId){
+		BoardFactory.postNewBoard($scope.newPin).then(function(boardId){
 			$location.url("/boards/list");
-			$scope.newBoard = {};
+			$scope.newPin = {};
 		});
 	};
 });
