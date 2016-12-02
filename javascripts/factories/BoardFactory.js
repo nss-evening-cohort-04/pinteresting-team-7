@@ -23,8 +23,8 @@ app.factory("BoardFactory", function($q, $http, FIREBASE_CONFIG){
 		$http.post(`${FIREBASE_CONFIG.databaseURL}/boards.json`,
 			JSON.stringify({
 				assignedTo: newBoard.assignedTo,
-				isClicked: newBoard.isClicked,
-				board: newBoard.board,
+				isSelected: newBoard.isSelected,
+				board: newBoard.pin,
 				uid: newBoard.uid
 			})
 		)
@@ -67,8 +67,8 @@ var getSingleBoard = function(boardId){
 		$http.put(`${FIREBASE_CONFIG.databaseURL}/boards/${editBoard.id}.json`,
 			JSON.stringify({
 				assignedTo: editBoard.assignedTo,
-				isCompleted: editBoard.isClicked,
-				task: editBoard.board,
+				isSelected: editBoard.isSelected,
+				pins: editBoard.pin,
 				uid: editBoard.uid
 			})
 		)
