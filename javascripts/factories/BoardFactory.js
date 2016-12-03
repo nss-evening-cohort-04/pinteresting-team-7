@@ -62,7 +62,6 @@ var getSingleBoard = function(boardId){
 };
 
  var editBoard = function(editBoard){
- 	console.log("factory edit", editBoard);
 	return $q((resolve, reject)=>{
 		$http.put(`${FIREBASE_CONFIG.databaseURL}/boards/${editBoard.id}.json`,
 			JSON.stringify({
@@ -82,8 +81,6 @@ var getSingleBoard = function(boardId){
  };
 
 
- return {getBoardView:getBoardView, 
- 	postNewBoard:postNewBoard, deleteBoard:deleteBoard, 
- 	getSingleBoard:getSingleBoard, editBoard:editBoard};
+ return {getBoardList:getBoardList, postNewBoard:postNewBoard, deleteBoard:deleteBoard, getSingleBoard:getSingleBoard, editBoard:editBoard};
 });
 
