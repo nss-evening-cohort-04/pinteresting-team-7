@@ -3,7 +3,7 @@
 		"board0": {
 			"title": "Boot 1",
 			"assignedTo": "Helana",
-			"uid":""
+			"uid":"rVXxyfbQWDQBScEly0CQyg4XXT33"
 		},
 		"board1": {
 			"title": "Boot 2",
@@ -28,7 +28,7 @@
 		"board5": {
 			"title": "Boot 6",
 			"assignedTo": "Helana",
-			"uid":""
+			"uid":"rVXxyfbQWDQBScEly0CQyg4XXT33"
 		},
 		"board6": {
 			"title": "Boot 7",
@@ -44,7 +44,7 @@
 		"board8": {
 			"title": "Boot 9",
 			"assignedTo": "Helana",
-			"uid":""
+			"uid":"rVXxyfbQWDQBScEly0CQyg4XXT33"
 
 		},
 		"board9": {
@@ -60,7 +60,7 @@
 		"board11": {
 			"title": "Boot 12",
 			"assignedTo": "Helana",
-			"uid":""
+			"uid":"rVXxyfbQWDQBScEly0CQyg4XXT33"
 		}
 	},
 	"pins": {

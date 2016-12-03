@@ -1,4 +1,4 @@
 "use strict";
 
-var app = angular.module("PinThisApp",["ngRoute"]);
+var app = angular.module("PinThisApp", ["ngRoute"]);
 
