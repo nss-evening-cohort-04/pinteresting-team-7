@@ -33,7 +33,7 @@ app.config(function($routeProvider){
 	$routeProvider
 		.when('/auth', {
 			templateUrl: 'partials/auth.html',
-			controller:'AuthCtrl'
+			controller:'AuthCtrl',
 		})
 		.when('/boards/list', {
 			templateUrl: 'partials/general-view.html',
