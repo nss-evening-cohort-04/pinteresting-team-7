@@ -11,7 +11,7 @@ app.controller("BoardEditCtrl", function($scope, $location, $routeParams, BoardF
 
 	$scope.addNewBoard = function(){
 		BoardFactory.editBoard($scope.newBoard).then(function(response){
-			$scope.newBoard = {};
+			$scope.newPins = {};
 			$location.url("/boards/list");
 		});
 	};
