@@ -4,8 +4,8 @@ app.controller("GeneralViewCtrl", function($scope, $rootScope, BoardFactory){
 	$scope.boards = [];
 
 	let getBoards = function(){
-		BoardFactory.getBoardList($rootScope.user.uid).then(function(fbItems){
-		$scope.boards = fbItems;
+		BoardFactory.getBoardList($rootScope.user.uid).then(function(fbBoards){
+		$scope.boards = fbBoards;
 	});
 };
 
@@ -17,9 +17,11 @@ $scope.deleteBoard = function(boardId){
 		});
 	};
 
-	$scope.inputChange = function(change){
-		BoardFactory.editBoard(change).then(function(response){
+	$scope.inputChange = function(thingy){
+		BoardFactory.editBoard(thingy).then(function(response){
 		 	getBoards();
 		});
 	};
 });
+
+console.log("GeneralViewCtrl Loaded");

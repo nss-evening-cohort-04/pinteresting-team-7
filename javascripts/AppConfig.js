@@ -42,7 +42,7 @@ app.config(function($routeProvider){
 		})
 		.when('/boards/new', {
 			templateUrl: 'partials/board-new.html',
-			controller: 'CreateBoardCtrl',
+			controller: 'BoardNewCtrl',
 			resolve: {isAuth}
 		})
 		.when('/boards/view/:id', {
