@@ -1,5 +1,5 @@
 {
-  "name": "pin this",
+  "name": "pin-this",
   "description": "Pinterest type app",
   "main": "index.js",
   "authors": [
@@ -20,9 +20,6 @@
     "jquery": "^3.1.1",
     "bootstrap": "^3.3.7",
     "angular": "^1.5.8",
-    "angular-route": "^1.5.9"
-  },
-  "resolutions": {
-    "angular": "^1.5.8"
+    "angular-route": "^1.5.8"
   }
 }

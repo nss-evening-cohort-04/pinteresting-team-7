@@ -1,31 +1,31 @@
 "use strict";
 
-app.factory("BoardFactory", function($q, $http, FIREBASE_CONFIG){
+app.factory("PinFactory", function($q, $http, FIREBASE_CONFIG){
 
-	var getBoardList = function(userId){
+	var getPinList = function(userId){
 	 return $q((resolve, reject) => {
-	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/boards.json?orderBy="uid"&equalTo="${userId}"`)
+	 	$http.get(`${FIREBASE_CONFIG.databaseURL}/pins.json?orderBy="uid"&equalTo="${userId}"`)
 	 	.success(function(response){
-	 		let boards = [];
+	 		let pins = [];
 	 		Object.keys(response).forEach(function(key){
 	 			response[key].id = key;
 	 			boards.push(response[key]);
 	 		});
-	 	  resolve(boards);
+	 	  resolve(pins);
 	 	})
 	 	.error(function(errorResponse){
 	 	  reject(errorResponse);
 	 	});
 	});
   };
- var postNewBoard = function(newBoard){
+ var postNewPin = function(newPin){
 	return $q((resolve, reject)=>{
 		$http.post(`${FIREBASE_CONFIG.databaseURL}/boards.json`,
 			JSON.stringify({
-				assignedTo: newBoard.assignedTo,
-				isSelected: newBoard.isSelected,
-				pin: newBoard.pin,
-				uid: newBoard.uid
+				assignedTo: newPin.assignedTo,
+				isSelected: newPin.isSelected,
+				pin: newPin.board,
+				uid: newPin.uid
 			})
 		)
 		.success(function(postResponse){
@@ -37,9 +37,9 @@ app.factory("BoardFactory", function($q, $http, FIREBASE_CONFIG){
 	});
  };
 
-var deleteBoard = function(boardId){
+var deletePin = function(boardId){
 	return $q((resolve, reject) => {
-		$http.delete(`${FIREBASE_CONFIG.databaseURL}/boards/${boardId}.json`)
+		$http.delete(`${FIREBASE_CONFIG.databaseURL}/pins/${PinId}.json`)
 		.success(function(deleteResponse){
 			resolve(deleteResponse);
 		})
@@ -49,9 +49,9 @@ var deleteBoard = function(boardId){
 	});
 };
 
-var getSingleBoard = function(boardId){
+var getSingleBoard = function(pinId){
 	return $q((resolve, reject) => {
-		$http.get(`${FIREBASE_CONFIG.databaseURL}/boards/${boardId}.json`)
+		$http.get(`${FIREBASE_CONFIG.databaseURL}/pins/${pinId}.json`)
 		.success(function(getSingleResponse){
 			resolve(getSingleResponse);
 		})
@@ -61,14 +61,14 @@ var getSingleBoard = function(boardId){
 	});
 };
 
- var editBoard = function(editBoard){
+ var editPin = function(editPin){
 	return $q((resolve, reject)=>{
-		$http.put(`${FIREBASE_CONFIG.databaseURL}/boards/${editBoard.id}.json`,
+		$http.put(`${FIREBASE_CONFIG.databaseURL}/pins/${editPin.id}.json`,
 			JSON.stringify({
-				assignedTo: editBoard.assignedTo,
-				isSelected: editBoard.isSelected,
-				pins: editBoard.pin,
-				uid: editBoard.uid
+				assignedTo: editPin.assignedTo,
+				isSelected: editPin.isSelected,
+				pins: editPin.pin,
+				uid: editPin.uid
 			})
 		)
 		.success(function(editResponse){
@@ -81,6 +81,6 @@ var getSingleBoard = function(boardId){
  };
 
 
- return {getBoardList:getBoardList, postNewBoard:postNewBoard, deleteBoard:deleteBoard, getSingleBoard:getSingleBoard, editBoard:editBoard};
+ return {getPinList:getPinList, postNewPin:postNewPin, deletePin:deletePin, getSinglePin:getSinglePin, editPin:editPin};
 });
 

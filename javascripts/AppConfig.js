@@ -6,14 +6,14 @@ let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
 	} else {
 		reject();
 	}
-});
+})
 
 app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory){
   firebase.initializeApp(FIREBASE_CONFIG);
 
 $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute){
+	
 	let logged = AuthFactory.isAuthenticated();
-
 	let appTo;
 
 	if(currRoute.originalPath){
@@ -42,7 +42,7 @@ app.config(function($routeProvider){
 		})
 		.when('/boards/new', {
 			templateUrl: 'partials/board-new.html',
-			controller: 'CreateBoardCtrl',
+			controller: 'BoardNewCtrl',
 			resolve: {isAuth}
 		})
 		.when('/boards/view/:id', {
@@ -62,3 +62,5 @@ app.config(function($routeProvider){
 		})
 		.otherwise('/auth');
 });
+
+console.log("AppConfig loaded");

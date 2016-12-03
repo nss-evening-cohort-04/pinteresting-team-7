@@ -7,11 +7,11 @@ app.controller("NavCtrl", function($scope) {
 		url:"#/logout"
 	}, 
     {
-    	name:"All Items",
+    	name:"My Boards",
     	url:"#/boards/list"
 	}, 
     {
-    	name:"New Item",
+    	name:"All Boards",
     	url:"#/boards/new"
 	}
    ];
