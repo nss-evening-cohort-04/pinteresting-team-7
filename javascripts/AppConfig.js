@@ -35,30 +35,30 @@ app.config(function($routeProvider){
 			templateUrl: 'partials/auth.html',
 			controller:'AuthCtrl'
 		})
-		// .when('/boards/list', {
-		// 	templateUrl: 'partials/general-view.html',
-		// 	controller: 'GeneralViewCtrl',
-		// 	resolve: {isAuth}
-		// })
-		// .when('/boards/new', {
-		// 	templateUrl: 'partials/create-board.html',
-		// 	controller: 'CreateBoardCtrl',
-		// 	resolve: {isAuth}
-		// })
-		// .when('/boards/view/:id', {
-		// 	templateUrl: 'partials/board-view.html',
-		// 	controller: 'BoardViewCtrl',
-		// 	resolve: {isAuth}
-		// })
-		// .when('/boards/edit/:id', {
-		// 	templateUrl: 'partials/create-board.html',
-		// 	controller:'BoardEditCtrl',
-		// 	resolve: {isAuth}
-		// })
-		// .when('/logout', {
-		// 	templateUrl: 'partials/auth.html',
-		// 	controller: 'AuthCtrl',
-		// 	resolve: {isAuth}
-		// })
+		.when('/boards/list', {
+			templateUrl: 'partials/general-view.html',
+			controller: 'GeneralViewCtrl',
+			resolve: {isAuth}
+		})
+		.when('/boards/new', {
+			templateUrl: 'partials/board-new.html',
+			controller: 'CreateBoardCtrl',
+			resolve: {isAuth}
+		})
+		.when('/boards/view/:id', {
+			templateUrl: 'partials/board-view.html',
+			controller: 'BoardViewCtrl',
+			resolve: {isAuth}
+		})
+		.when('/boards/edit/:id', {
+			templateUrl: 'partials/board-new.html',
+			controller:'BoardEditCtrl',
+			resolve: {isAuth}
+		})
+		.when('/logout', {
+			templateUrl: 'partials/auth.html',
+			controller: 'AuthCtrl',
+			resolve: {isAuth}
+		})
 		.otherwise('/auth');
 });

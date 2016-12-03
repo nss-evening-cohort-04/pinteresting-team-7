@@ -4,7 +4,7 @@ app.controller("GeneralViewCtrl", function($scope, $rootScope, BoardFactory){
 	$scope.boards = [];
 
 	let getBoards = function(){
-		BoardFactory.getGeneralView($rootScope.user.uid).then(function(fbItems){
+		BoardFactory.getBoardList($rootScope.user.uid).then(function(fbItems){
 		$scope.boards = fbItems;
 	});
 };
