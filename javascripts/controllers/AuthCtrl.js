@@ -5,7 +5,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, AuthFactory, UserFactory
 	$scope.setRegisterContainer = false;
 	
 
-	if($location.path() == "/logout"){
+	if($location.path() === "/logout"){
 		AuthFactory.logout();
 		$rootScope.user ={};
 		$location.url("/auth");
@@ -23,15 +23,16 @@ app.controller("AuthCtrl", function($scope, $rootScope, AuthFactory, UserFactory
 		});
 	};
 
-	$scope.setLoginContainer = function(){
-		$scope.loginContainer = true;
-		$scope.registerContainer = false;
-
-	};
 
 	$scope.setRegisterContainer = function(){
 		$scope.loginContainer = false;
 		$scope.registerContainer = true;
+
+	};
+
+	$scope.setLoginContainer = function(){
+		$scope.loginContainer = true;
+		$scope.registerContainer = false;
 
 	};
 

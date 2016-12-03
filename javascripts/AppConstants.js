@@ -7,3 +7,5 @@ app.constant("FIREBASE_CONFIG", {
     storageBucket: "pinthis-fe275.appspot.com",
     messagingSenderId: "918121387819"
 });
+
+console.log("AppConstantsCompleted");
