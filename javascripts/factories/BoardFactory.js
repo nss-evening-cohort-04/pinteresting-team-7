@@ -82,6 +82,8 @@ var getSingleBoard = function(boardId){
  };
 
 
- return {getGeneralView:getGeneralView, postNewBoard:postNewBoard, deleteBoard:deleteBoard, getSingleBoard:getSingleBoard, editBoard:editBoard};
+ return {getBoardView:getBoardView, 
+ 	postNewBoard:postNewBoard, deleteBoard:deleteBoard, 
+ 	getSingleBoard:getSingleBoard, editBoard:editBoard};
 });
 
